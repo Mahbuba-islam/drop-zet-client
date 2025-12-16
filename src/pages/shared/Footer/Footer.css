@@ -1,0 +1,89 @@
+.footer-bg {
+  background-color: #000000;
+  background-image:
+    repeating-linear-gradient(30deg, rgba(255, 140, 0, 0.06) 0 8px, transparent 8px 28px),
+    repeating-linear-gradient(-30deg, rgba(255, 140, 0, 0.06) 0 8px, transparent 8px 28px);
+  background-blend-mode: normal;
+
+}
+
+
+.footer-black {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 60px 20px;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(207, 17, 17, 0.04) 0 8px, transparent 30px 60px),
+    repeating-linear-gradient(50deg, rgba(0,0,0,0.04) 0 6px, transparent 60px 50px);
+  background-blend-mode: normal;
+  /* background-size: 20px 20px;
+  background-repeat: repeat; */
+}
+.footer-black h3 {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.footer-black ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-black li {
+  margin-bottom: 8px;
+}
+
+
+
+
+/* annimate */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    color: #ffffff;
+    text-shadow: none;
+  }
+  50% {
+    color: #ffa500;
+    text-shadow: 0 0 8px #ffa500;
+  }
+  100% {
+    color: #ffffff;
+    text-shadow: none;
+  }
+}
+
+.footer-animate {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.footer-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+
+/* left annimate */
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.left-animate {
+  animation: slideInLeft 1s ease forwards;
+}
