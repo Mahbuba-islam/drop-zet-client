@@ -1,27 +1,14 @@
- import DropZetLogo from '../dropZetLogo';
+ import { NavLink } from 'react-router';
+import DropZetLogo from '../dropZetLogo';
 import '../Footer/Footer.css'
- 
+ import { FaFacebook, FaGooglePlus, FaLinkedin, FaTwitter } from "react-icons/fa";
 const Footer = () => {
 
    return (
-  <footer className="bg-[#e50f0f] text-white pt-1 font-sans ">
-    <div className='footer-bg py-8 '>
-     {/* Top Row: Call to Action Banner */}
-  {/* <div className="bg-orange-600 text-black px-6 py-4 rounded-lg flex items-center justify-between shadow-md">
-    <span className="font-bold">CALL US TO ORDER DELIVERY</span>
-    <span className="flex items-center gap-2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-          d="M3 5h2l3 7-1.5 2.5a11.05 11.05 0 005.5 5.5L14 16l7 3v-2a2 2 0 00-2-2h-3l-4-4V5a2 2 0 00-2-2H5a2 2 0 00-2 2z" />
-      </svg>
-      <span>123-456-7890</span>
-    </span>
-  </div>
-   
-  */}
-
-  {/* Middle Row: Logo + Links */}
+  <footer className="bg-[#e50f0f] text-white pt-1 font-sans rounded-xl ">
+    <div className='footer-bg py-8 rounded-t-xl'>
+    
+{/* Middle Row: Logo + Links */}
   <div className="mt-10 grid md:grid-cols-4 gap-8 ">
     {/* Branding Section */}
     <div className='footer-glow left-animate'>
@@ -31,43 +18,110 @@ const Footer = () => {
 
     {/* Services */}
     <div className=''>
-      <h6 className="footer-title text-orange-400 mb-3 footer-animate">Services</h6>
-      <ul className="space-y-2 text-sm footer-animate">
-        <li><a className="hover:text-orange-300 ">Branding</a></li>
-        <li><a className="hover:text-orange-300 ">Design</a></li>
-        <li><a className="hover:text-orange-300 ">Marketing</a></li>
-        <li><a className="hover:text-orange-300 ">Advertisement</a></li>
+    
+      <ul className="space-y-2 text-sm footer-animate md:text-left text-center">
+         <li>
+  <NavLink to="/" className={({ isActive }) =>
+     isActive ? "text-orange-500 font-bold" : "hover:text-orange-500" }>
+    HOME
+  </NavLink>
+</li>
+
+<li>
+  <NavLink  to="/about" className={({ isActive }) => 
+    isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"}>
+    ABOUT
+  </NavLink>
+</li>
+
+<li>
+  <NavLink to="/tracking" className={({ isActive }) => 
+   isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"}>
+    TRACKING
+  </NavLink>
+</li>
+
+<li>
+  <NavLink to="/pricing" className={({ isActive }) => 
+  isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"
+  }
+  >
+    PRICING
+  </NavLink>
+</li>
+
+
       </ul>
     </div>
 
     {/* Company */}
     <div>
-      <h6 className="footer-title text-orange-400 mb-3 footer-animate">Company</h6>
-      <ul className="space-y-2 text-sm footer-animate">
-        <li><a className="hover:text-orange-300">About us</a></li>
-        <li><a className="hover:text-orange-300">Contact</a></li>
-        <li><a className="hover:text-orange-300">Jobs</a></li>
-        <li><a className="hover:text-orange-300">Press kit</a></li>
+     <ul className="space-y-2 text-sm footer-animate  md:text-left text-center">
+       <li><NavLink to="/contact"  className={({ isActive }) => 
+     isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"}>
+    CONTACT
+  </NavLink>
+</li>
+
+<li>
+  <NavLink to="/blog"  className={({ isActive }) => 
+  isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"
+    }>
+    BLOG
+  </NavLink>
+</li>
+
+<li>
+  <NavLink to="/blog"  className={({ isActive }) => 
+  isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"
+    }>
+   SUPPORT
+  </NavLink>
+</li>
+
+<li>
+  <NavLink  to="/pages" 
+    className={({ isActive }) => 
+      isActive ? "text-orange-500 font-bold" : "hover:text-orange-500"}>
+    PAGES
+  </NavLink>
+</li>
       </ul>
     </div>
 
-    {/* Customer Care */}
-    <div>
-      <h6 className="footer-title text-orange-400 mb-3 footer-animate">Customer Care</h6>
-      <ul className="space-y-2 text-sm footer-animate">
-        <li><a className="hover:text-orange-300">Help Center</a></li>
-        <li><a className="hover:text-orange-300">Track Order</a></li>
-        <li><a className="hover:text-orange-300">Returns</a></li>
-        <li><a className="hover:text-orange-300">Privacy Policy</a></li>
-      </ul>
-    </div>
+    
+   <div className="footer-section text-center md:text-left px-4 ">
+  <h3 className="text-lg font-semibold text-white">GET IN TOUCH</h3>
+
+  {/* Social Icons */}
+  <div className="social-icons flex justify-center md:justify-start gap-6 my-4">
+    <FaFacebook size={26} className="text-white hover:text-orange-500" />
+    <FaTwitter size={26} className="text-white hover:text-orange-500" />
+    <FaGooglePlus size={26} className="text-white hover:text-orange-500" />
+    <FaLinkedin size={26} className="text-white hover:text-orange-500" />
   </div>
 
-  
-   
+  {/* Payment Icons */}
+  <div className="payment-icons flex flex-wrap justify-center md:justify-start gap-4 mt-2">
+    {/* PayPal */}
+    <svg width="85" height="32" viewBox="0 0 96 28" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PayPal">
+      <rect width="96" height="28" rx="4" fill="#013087" />
+      <text x="10" y="19" fontFamily="Segoe UI, Arial, sans-serif" fontSize="14" fill="#fff">PayPal</text>
+    </svg>
+
+    {/* VISA */}
+    <svg width="85" height="32" viewBox="0 0 96 28" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VISA">
+      <rect width="96" height="28" rx="4" fill="#1A1F71" />
+      <text x="12" y="19" fontFamily="Segoe UI, Arial, sans-serif" fontWeight="700" fontSize="14" fill="#fff">VISA</text>
+    </svg>
+  </div>
+</div>
+
+  </div>
+
   </div>
   
-   <div className='bg-black text-center text-xs p-8'>
+   <div className='bg-black text-center text-xs p-8 rounded-b-xl'>
       Drop-Zet © 2025. All Rights Reserved | 
       <a href="#" className="ml-2 hover:text-orange-300">Terms</a> | 
       <a href="#" className="ml-2 hover:text-orange-300">Privacy</a>
